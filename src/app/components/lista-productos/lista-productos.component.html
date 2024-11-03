@@ -1,0 +1,8 @@
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+  @for (producto of productos; track $index) {
+    <app-product-card 
+      [producto]="producto" 
+      (addToCart)="agregarAlCarrito($event.producto, $event.cantidad)">
+    </app-product-card>
+  }
+</div>

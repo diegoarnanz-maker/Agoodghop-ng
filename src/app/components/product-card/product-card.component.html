@@ -1,0 +1,36 @@
+<div class="border rounded-lg p-4 shadow-md">
+  <h2 class="text-xl font-bold text-[var(--primary-color)]">
+    {{ producto.title }}
+  </h2>
+  <p class="text-lg text-[var(--secondary-color-dark)]">{{ producto.price }} €</p>
+
+  <div class="my-2">
+    <label for="cantidad" class="mr-2">Cantidad:</label>
+    <input
+      id="cantidad"
+      type="number"
+      [(ngModel)]="cantidad"
+      min="1"
+      class="border p-1 rounded"
+    />
+    @if (errorMensaje) {
+      <p class="text-red-500 text-sm">{{ errorMensaje }}</p>
+    }
+  </div>
+  
+  <div class="flex gap-4">
+    <button
+      (click)="agregarAlCarrito()"
+      class="bg-[var(--background-color)] text-white p-2 rounded hover:bg-[var(--primary-color)] hover:text-white transition-colors duration-300"
+    >
+      Añadir al Carrito
+    </button>
+    
+    <button
+      [routerLink]="['/product-details', producto.SKU]"
+      class="bg-[var(--secondary-color)] text-[var(--background-color)] p-2 rounded hover:bg-[var(--secondary-color-dark)] hover:text-white transition-colors duration-300"
+    >
+      Ver Detalles
+    </button>
+  </div>
+</div>

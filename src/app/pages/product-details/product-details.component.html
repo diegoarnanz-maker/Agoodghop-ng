@@ -1,0 +1,24 @@
+@if(productDetails) {
+  <div class="max-w-md mx-auto bg-[var(--background-color)] shadow-lg rounded-lg p-6 mt-6">
+    <h2 class="text-2xl font-semibold text-white mb-4">
+      {{ productDetails.title }}
+    </h2>
+    <p class="text-[var(--secondary-color)] mt-2">
+      Identificador: <span class="font-medium">{{ productDetails.SKU }}</span>
+    </p>
+    <p class="text-[var(--secondary-color)] mt-2">
+      Precio: 
+      <span class="font-bold text-green-100">{{ productDetails.price }} euros</span>
+    </p>
+    <a
+      routerLink="/productos"
+      class="bg-[var(--primary-color)] text-white py-2 px-4 rounded hover:bg-[var(--secondary-color-dark)] transition duration-200 mt-4 inline-block"
+    >
+      Seguir viendo productos
+    </a>
+  </div>
+} @else {
+  <div class="max-w-md mx-auto bg-white shadow-lg rounded-lg p-6 mt-6">
+    <h2 class="text-2xl font-semibold text-gray-800">Producto no encontrado</h2>
+  </div>
+}
